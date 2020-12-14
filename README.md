@@ -1,3 +1,4 @@
+![Static security analysis for Terraform](https://github.com/foss-cafe/terraform-aws-security-group/workflows/Static%20security%20analysis%20for%20Terraform/badge.svg)
 # Terraform Module for AWS Security Group
 
 ### Use as a Module
