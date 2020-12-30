@@ -55,3 +55,8 @@ module "secgrp-1" {
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ### ToDo
+
+## License
+
+Apache 2 Licensed. See LICENSE for full details.
+
