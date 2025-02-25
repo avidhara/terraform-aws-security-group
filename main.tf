@@ -1,3 +1,4 @@
+#checkov:skip=CKV2_AWS_5:The Module does not cover attaching security groups to ENIs
 resource "aws_security_group" "this" {
   count       = var.vpc_id != "" ? 1 : 0
   name        = format("%s-sg", var.name)
