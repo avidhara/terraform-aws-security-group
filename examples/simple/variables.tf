@@ -1,42 +1,27 @@
 variable "vpc_id" {
+  default = "vpc-0a93d6b34ea65ff73"
 }
 
-variable "ingress" {
-  default = [
-    {
-      cidr_blocks = [
-        "10.248.186.0/23",
-        "10.248.180.0/23",
-      ]
-      from_port   = "22"
-      to_port     = "22"
-      protocol    = "tcp"
-      description = "Allow connectivity from Atlanta VPN"
-    },
-    {
-      cidr_blocks = [
-        "10.248.80.0/23",
-        "10.248.86.0/23",
-      ]
-      from_port   = "22"
-      to_port     = "22"
-      protocol    = "tcp"
-      description = "Allow connectivity from Miami VPN"
-    },
-  ]
+variable "ingress_rules" {
+  default = {
+    "http" = {
+      cidr_ipv4   = "0.0.0.0/0"
+      description = "allow 80"
+      ip_protocol = "tcp"
+      from_port   = 80
+      to_port     = 80
+    }
+  }
 }
 
-variable "egress" {
-  default = [
-    {
-      cidr_blocks = [
-        "0.0.0.0/0",
-      ]
+variable "egress_rules" {
+  default = {
+    "allow-all" = {
+      cidr_ipv4   = "0.0.0.0/0"
+      description = "allow all"
+      ip_protocol = "-1"
       from_port   = 0
       to_port     = 0
-      protocol    = "-1"
-      self        = false
-      description = ""
-    },
-  ]
+    }
+  }
 }

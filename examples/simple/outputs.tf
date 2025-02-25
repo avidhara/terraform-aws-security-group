@@ -1,3 +1,3 @@
 output "output" {
-  value = module.secgrp-1.arn
+  value = module.secgrp-1.id
 }
