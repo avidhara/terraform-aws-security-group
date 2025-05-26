@@ -17,7 +17,7 @@ variable "ingress_rules" {
 variable "egress_rules" {
   default = {
     "allow-all" = {
-      cidr_ipv4   = "0.0.0.0/0"
+      cidr_ipv4   = "10.0.0.0/16"
       description = "allow all"
       ip_protocol = "-1"
       from_port   = 0
